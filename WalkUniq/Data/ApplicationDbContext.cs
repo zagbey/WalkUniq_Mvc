@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using WalkUniq.Models;
 
 namespace WalkUniq.Data
 {
@@ -8,5 +9,6 @@ namespace WalkUniq.Data
         {
             
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }

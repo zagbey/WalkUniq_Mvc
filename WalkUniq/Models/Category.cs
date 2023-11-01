@@ -8,7 +8,7 @@ namespace WalkUniq.Models
         public int Id { get; set; }
 
         [Required] // not null
-        public string Name { get; set; }
+        public required string Name { get; set; }
         public int DisplayOrder { get; set; }
     }
 }
