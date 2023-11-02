@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using WalkUniq.Data;
+using WalkUniq.DataAccess.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 

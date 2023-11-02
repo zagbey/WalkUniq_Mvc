@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WalkUniq.Data;
+using WalkUniq.DataAccess.Data;
 using WalkUniq.Models;
 
 namespace WalkUniq.Controllers

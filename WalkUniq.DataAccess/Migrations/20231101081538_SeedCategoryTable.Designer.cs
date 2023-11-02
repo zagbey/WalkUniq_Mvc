@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using WalkUniq.Data;
+using WalkUniq.DataAccess.Data;
 
 #nullable disable
 
-namespace WalkUniq.Migrations
+namespace WalkUniq.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20231101081538_SeedCategoryTable")]

@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WalkUniq.Models;
 
-namespace WalkUniq.Data
+
+namespace WalkUniq.DataAccess.Data
 {
     public class ApplicationDbContext:DbContext
     {

@@ -17,4 +17,9 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.0-rc.2.23509.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\WalkUniq.DataAccess\WalkUniq.DataAccess.csproj" />
+    <ProjectReference Include="..\WalkUniq.Models\WalkUniq.Models.csproj" />
+  </ItemGroup>
+
 </Project>

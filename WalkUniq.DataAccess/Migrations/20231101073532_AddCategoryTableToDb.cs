@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace WalkUniq.Migrations
+namespace WalkUniq.DataAccess.Migrations
 {
     /// <inheritdoc />
     public partial class AddCategoryTableToDb : Migration
