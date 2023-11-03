@@ -25,6 +25,7 @@ namespace WalkUniq.Controllers
         [HttpPost]
         public IActionResult Create(Category obj)
         {
+            //display order ve name eşit mi kontrolü 
             if(obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "DisplayOrder cannot exactly match the Name.");
