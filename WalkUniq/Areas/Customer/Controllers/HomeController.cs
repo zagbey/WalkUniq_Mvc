@@ -2,8 +2,9 @@ using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using WalkUniq.Models;
 
-namespace WalkUniq.Controllers
+namespace WalkUniq.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;

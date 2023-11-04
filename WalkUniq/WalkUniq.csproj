@@ -22,4 +22,8 @@
     <ProjectReference Include="..\WalkUniq.Models\WalkUniq.Models.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\" />
+  </ItemGroup>
+
 </Project>

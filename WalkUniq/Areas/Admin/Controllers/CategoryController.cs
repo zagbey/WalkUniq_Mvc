@@ -2,10 +2,11 @@
 using WalkUniq.DataAccess.Data;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
- 
 
-namespace WalkUniq.Controllers
+
+namespace WalkUniq.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
@@ -18,7 +19,7 @@ namespace WalkUniq.Controllers
             List<Category> objCategoryList = _unitOfWork.Category.GetAll().ToList();
             return View(objCategoryList);
         }
-        public IActionResult Create() 
+        public IActionResult Create()
         {
             return View();
         }
@@ -28,7 +29,7 @@ namespace WalkUniq.Controllers
         public IActionResult Create(Category obj)
         {
             //display order ve name eşit mi kontrolü 
-            if(obj.Name == obj.DisplayOrder.ToString())
+            if (obj.Name == obj.DisplayOrder.ToString())
             {
                 ModelState.AddModelError("name", "DisplayOrder cannot exactly match the Name.");
             }
@@ -37,9 +38,9 @@ namespace WalkUniq.Controllers
                 _unitOfWork.Category.Add(obj);
                 _unitOfWork.Save();
                 TempData["success"] = "Category created successfully";
-                 return RedirectToAction("Index");
+                return RedirectToAction("Index");
             }
-           return View();
+            return View();
 
         }
         public IActionResult Edit(int? id)
@@ -48,7 +49,7 @@ namespace WalkUniq.Controllers
             {
                 return NotFound();
             }
-            Category? categoryFromDb = _unitOfWork.Category.Get(u=>u.Id==id);
+            Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
             //Category? categoryFromDb1 = _db.Categories.FirstOrDefault(u => u.Id == id);
             //Category? categoryFromDb2 = _db.Categories.Where(u => u.Id == id).FirstOrDefault();
 
@@ -61,7 +62,7 @@ namespace WalkUniq.Controllers
         [HttpPost]
         public IActionResult Edit(Category obj)
         {
-            
+
 
             if (ModelState.IsValid)
             {
@@ -80,7 +81,7 @@ namespace WalkUniq.Controllers
                 return NotFound();
             }
             Category? categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
-     
+
 
             if (categoryFromDb == null)
             {
@@ -88,7 +89,7 @@ namespace WalkUniq.Controllers
             }
             return View(categoryFromDb);
         }
-        [HttpPost,ActionName("Delete")]
+        [HttpPost, ActionName("Delete")]
         public IActionResult DeletePOST(int? id)
         {
             Category? obj = _unitOfWork.Category.Get(u => u.Id == id);
@@ -97,13 +98,13 @@ namespace WalkUniq.Controllers
                 return NotFound();
             }
 
-  
-             _unitOfWork.Category.Remove(obj);
+
+            _unitOfWork.Category.Remove(obj);
             _unitOfWork.Save();
             TempData["success"] = "Category deleted successfully";
             return RedirectToAction("Index");
-            
-            
+
+
 
         }
     }
