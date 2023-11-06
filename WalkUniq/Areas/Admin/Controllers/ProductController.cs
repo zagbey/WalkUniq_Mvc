@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using WalkUniq.DataAccess.Data;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
+using WalkUniq.Models.ViewModels;
 
 
 namespace WalkUniq.Areas.Admin.Controllers
@@ -24,30 +25,39 @@ namespace WalkUniq.Areas.Admin.Controllers
         public IActionResult Create()
         {
             //kategorileri listeleme (projections)
-            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.
-                GetAll().Select(u => new SelectListItem
+            
+            ProductVM productVM = new()
             {
-                Text = u.Name,
-                Value = u.Id.ToString()
-            });
-            ViewBag.CategoryList = CategoryList;
-            return View();
+                CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                }),
+                Product = new Product()
+            };
+            return View(productVM);
         }
 
         //Create Product
         [HttpPost]
-        public IActionResult Create(Product obj)
+        public IActionResult Create(ProductVM productVM)
         {
-            
-           
             if (ModelState.IsValid)
             {
-                _unitOfWork.Product.Add(obj);
+                _unitOfWork.Product.Add(productVM.Product);
                 _unitOfWork.Save();
                 TempData["success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
-            return View();
+            else
+            {
+                productVM.CategoryList = _unitOfWork.Category.GetAll().Select(u => new SelectListItem
+                {
+                    Text = u.Name,
+                    Value = u.Id.ToString()
+                });
+                return View(productVM);
+            }
 
         }
         public IActionResult Edit(int? id)
