@@ -96,7 +96,7 @@ namespace WalkUniq.Areas.Admin.Controllers
                     _unitOfWork.Product.Update(productVM.Product);
                 }
                 //oluşturulan ürünü kaydediyoruz
-                _unitOfWork.Product.Add(productVM.Product);
+                
                 _unitOfWork.Save();
                 //başarı mesajı
                 TempData["success"] = "Product created successfully";

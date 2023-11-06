@@ -19,6 +19,7 @@ namespace WalkUniq.DataAccess.Repository
             _db = db;
             this.dbSet=db.Set<T>();
             //_db.Categories==dbSet
+            
         }
         public void Add(T entity)
         {
