@@ -11,8 +11,8 @@ using WalkUniq.DataAccess.Data;
 namespace WalkUniq.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20231104160000_addProductsToDb")]
-    partial class addProductsToDb
+    [Migration("20231105112631_restartAll")]
+    partial class restartAll
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -73,6 +73,9 @@ namespace WalkUniq.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<int>("CategoryId")
+                        .HasColumnType("int");
+
                     b.Property<string>("Company")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -99,12 +102,15 @@ namespace WalkUniq.DataAccess.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
                     b.ToTable("Products");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
+                            CategoryId = 1,
                             Company = "Converse",
                             Description = "Converse Chuck 70 Hi Unisex Siyah Sneaker",
                             ListPrice = 99.0,
@@ -116,6 +122,7 @@ namespace WalkUniq.DataAccess.Migrations
                         new
                         {
                             Id = 2,
+                            CategoryId = 1,
                             Company = "Converse",
                             Description = "Converse Chuck Taylor All Star Unisex Siyah Sneaker ",
                             ListPrice = 40.0,
@@ -127,6 +134,7 @@ namespace WalkUniq.DataAccess.Migrations
                         new
                         {
                             Id = 3,
+                            CategoryId = 1,
                             Company = "Nike",
                             Description = "Nike Waffle One Erkek Bej Spor Ayakkabı ",
                             ListPrice = 55.0,
@@ -138,6 +146,7 @@ namespace WalkUniq.DataAccess.Migrations
                         new
                         {
                             Id = 4,
+                            CategoryId = 1,
                             Company = "adidas",
                             Description = "adidas Ozweego Unisex Beyaz Spor Ayakkabı",
                             ListPrice = 70.0,
@@ -149,6 +158,7 @@ namespace WalkUniq.DataAccess.Migrations
                         new
                         {
                             Id = 5,
+                            CategoryId = 2,
                             Company = "Converse",
                             Description = "Converse Run Star Hike Platform Unisex Siyah Sneaker ",
                             ListPrice = 30.0,
@@ -160,6 +170,7 @@ namespace WalkUniq.DataAccess.Migrations
                         new
                         {
                             Id = 6,
+                            CategoryId = 2,
                             Company = "Vans",
                             Description = "Vans Old Skool Unisex Siyah Sneaker ",
                             ListPrice = 25.0,
@@ -168,6 +179,17 @@ namespace WalkUniq.DataAccess.Migrations
                             Price50 = 22.0,
                             Title = "Vans"
                         });
+                });
+
+            modelBuilder.Entity("WalkUniq.Models.Product", b =>
+                {
+                    b.HasOne("WalkUniq.Models.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Category");
                 });
 #pragma warning restore 612, 618
         }
