@@ -68,11 +68,32 @@ namespace WalkUniq.Areas.Admin.Controllers
                     //where we save that
                     string productPath =Path.Combine(wwwRootPath,@"images\product" );
 
-                    using(var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
+                    if (!string.IsNullOrEmpty( productVM.Product.ImageUrl))
+                    {
+                        //resim dolu geliyorsa 
+                        //DELETE old image 
+                        var oldImagePath =
+                            Path.Combine(wwwRootPath, productVM.Product.ImageUrl.TrimStart('\\'));
+                        if (System.IO.File.Exists(oldImagePath))
+                        {
+                            System.IO.File.Delete(oldImagePath);
+                        }
+                    }
+
+                    //UPLOAD Img
+                    using (var fileStream = new FileStream(Path.Combine(productPath,fileName),FileMode.Create))
                     {
                         file.CopyTo(fileStream);
                     }
                     productVM.Product.ImageUrl = @"\images\product\" + fileName;
+                }
+                if (productVM.Product.Id==0)
+                {
+                    _unitOfWork.Product.Add(productVM.Product);    
+                }
+                else
+                {
+                    _unitOfWork.Product.Update(productVM.Product);
                 }
                 //oluşturulan ürünü kaydediyoruz
                 _unitOfWork.Product.Add(productVM.Product);
