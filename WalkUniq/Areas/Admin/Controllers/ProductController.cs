@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using WalkUniq.DataAccess.Data;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
@@ -16,7 +17,13 @@ namespace WalkUniq.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
+            //kategorileri listeleme (projections)
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
+            IEnumerable<SelectListItem> CategoryList=_unitOfWork.Category.GetAll().Select(u=>new SelectListItem
+            {
+                Text = u.Name,
+                Value=u.Id.ToString()
+            });
             return View(objProductList);
         }
         public IActionResult Create()
