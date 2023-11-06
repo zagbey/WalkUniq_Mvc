@@ -17,17 +17,20 @@ namespace WalkUniq.Areas.Admin.Controllers
         }
         public IActionResult Index()
         {
-            //kategorileri listeleme (projections)
             List<Product> objProductList = _unitOfWork.Product.GetAll().ToList();
-            IEnumerable<SelectListItem> CategoryList=_unitOfWork.Category.GetAll().Select(u=>new SelectListItem
-            {
-                Text = u.Name,
-                Value=u.Id.ToString()
-            });
+           
             return View(objProductList);
         }
         public IActionResult Create()
         {
+            //kategorileri listeleme (projections)
+            IEnumerable<SelectListItem> CategoryList = _unitOfWork.Category.
+                GetAll().Select(u => new SelectListItem
+            {
+                Text = u.Name,
+                Value = u.Id.ToString()
+            });
+            ViewBag.CategoryList = CategoryList;
             return View();
         }
 
@@ -35,7 +38,7 @@ namespace WalkUniq.Areas.Admin.Controllers
         [HttpPost]
         public IActionResult Create(Product obj)
         {
-            //display order ve name eşit mi kontrolü 
+            
            
             if (ModelState.IsValid)
             {
