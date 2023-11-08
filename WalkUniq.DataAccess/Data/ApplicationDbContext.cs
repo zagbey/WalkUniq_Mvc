@@ -1,11 +1,12 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System.Security.Cryptography;
 using WalkUniq.Models;
-
+using Microsoft.AspNetCore.Identity;
 
 namespace WalkUniq.DataAccess.Data
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext:IdentityDbContext<IdentityUser>
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>options): base(options) 
         {
@@ -15,6 +16,9 @@ namespace WalkUniq.DataAccess.Data
         public DbSet<Product> Products { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            //line and that is because keys of identity tables are mapped in the on model creating.
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Category>().HasData(
                 new Category { Id = 1, Name="Man" ,DisplayOrder=1},
                 new Category { Id = 2, Name="Women" ,DisplayOrder=2},
