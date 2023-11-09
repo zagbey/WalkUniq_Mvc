@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using WalkUniq.DataAccess.Data;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
+using WalkUniq.Utility;
 
 
 namespace WalkUniq.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles =SD.Role_Admin)]
     public class CategoryController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
