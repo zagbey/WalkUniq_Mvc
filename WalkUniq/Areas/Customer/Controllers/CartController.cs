@@ -30,8 +30,32 @@ namespace WalkUniq.Areas.Customer.Controllers
                 ShoppingCartList = _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId,
                 includeProperties: "Product")
             };
+            foreach (var cart in ShoppingCartVM.ShoppingCartList)
+            {
+                cart.Price = GetPriceBaseOnQuantity(cart);
+                ShoppingCartVM.OrderTotal += (cart.Price * cart.Count);
+            }
 
             return View(ShoppingCartVM);
+        }
+        // shoppingcar price hesaplama seçenekleri
+        private double GetPriceBaseOnQuantity(ShoppingCart shoppingCart)
+        {
+            if (shoppingCart.Count<=50)
+            {
+                return shoppingCart.Product.Price;
+            }
+            else
+            {
+                if (shoppingCart.Count<=100)
+                {
+                    return shoppingCart.Product.Price50;
+                }
+                else
+                {
+                    return shoppingCart.Product.Price100;
+                }
+            }
         }
     }
 }
