@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WalkUniq.DataAccess.Data;
 
@@ -10,9 +11,11 @@ using WalkUniq.DataAccess.Data;
 namespace WalkUniq.DataAccess.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231111201200_productImageSource")]
+    partial class productImageSource
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.0-rc.2.23480.1");
@@ -489,19 +492,6 @@ namespace WalkUniq.DataAccess.Migrations
                             Price100 = 54.0,
                             Price50 = 58.0,
                             Title = "Vans"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            CategoryId = 2,
-                            Company = "adidas",
-                            Description = "adidas Oznova Erkek Beyaz Spor Ayakkabı ",
-                            ImageUrl = "",
-                            ListPrice = 66.0,
-                            Price = 60.0,
-                            Price100 = 54.0,
-                            Price50 = 58.0,
-                            Title = "adidas"
                         });
                 });
 

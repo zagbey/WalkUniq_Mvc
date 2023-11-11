@@ -107,7 +107,37 @@ namespace WalkUniq.DataAccess.Data
                     Price100 = 20,
                     CategoryId = 2,
                     ImageUrl=""
-                }
+                },
+                 new Product
+                 {
+                     Id = 7,
+                     Title = "Vans",
+                     Company = "adidas",
+                     Description = "adidas Oznova Erkek Siyah Spor Ayakkabı ",
+                     ListPrice = 66,
+                     Price = 60,
+                     Price50 = 58,
+                     Price100 = 54,
+                     CategoryId = 2,
+                     ImageUrl = "\"C:\\Users\\90535\\Desktop\\images for site\\shoes image\\adidas Oznova Erkek Siyah Spor Ayakkabı.webp\""
+                 },
+                  new Product
+                  {
+                      Id = 8,
+                      Title = "adidas",
+                      Company = "adidas",
+                      Description = "adidas Oznova Erkek Beyaz Spor Ayakkabı ",
+                      ListPrice = 66,
+                      Price = 60,
+                      Price50 = 58,
+                      Price100 = 54,
+                      CategoryId = 2,
+                      ImageUrl = ""
+                  }
+
+
+
+
 
                 );
         }
