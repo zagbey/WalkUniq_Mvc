@@ -13,6 +13,8 @@ namespace WalkUniq.DataAccess.Repository.IRepository
         IProductRepository Product { get; }
         IShoppingCartRepository ShoppingCart { get; }
         IApplicationUserRepository ApplicationUser { get; }
+        IOrderDetailRepository OrderDetail { get; }
+        IOrderHeaderRepository OrderHeader { get; }
         void Save();
     }
 }
