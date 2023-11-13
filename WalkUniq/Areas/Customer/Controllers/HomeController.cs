@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
+using WalkUniq.Utility;
 
 namespace WalkUniq.Areas.Customer.Controllers
 {
@@ -35,6 +36,7 @@ namespace WalkUniq.Areas.Customer.Controllers
         }
         [HttpPost]
         [Authorize] // giriş yapan userID
+        //new ıtems ford the card
         public IActionResult Details(ShoppingCart shoppingCart)
         {
             var claimsIdentity = (ClaimsIdentity)User.Identity;
@@ -50,15 +52,19 @@ namespace WalkUniq.Areas.Customer.Controllers
                 //shopping cart exists
                 cartFromDb.Count += shoppingCart.Count;
                 _unitOfWork.ShoppingCart.Update(cartFromDb);
+                _unitOfWork.Save();
             }
             else
             {
                 //add cart record
                 _unitOfWork.ShoppingCart.Add(shoppingCart);
+                _unitOfWork.Save();
+                HttpContext.Session.SetInt32(SD.SessionCart,
+                _unitOfWork.ShoppingCart.GetAll(u => u.ApplicationUserId == userId).Count());
             }
             TempData["success"] = "Cart updated successfully";
 
-            _unitOfWork.Save();
+            
 
 
             return RedirectToAction(nameof(Index));
