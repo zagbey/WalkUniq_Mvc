@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
+using WalkUniq.Models.ViewModels;
 using WalkUniq.Utility;
 
 namespace WalkUniq.Areas.Admin.Controllers
@@ -20,6 +21,16 @@ namespace WalkUniq.Areas.Admin.Controllers
             return View();
         }
 
+        public IActionResult Details(int orderId)
+        {
+            OrderVM orderVM = new()
+            {
+                OrderHeader = _unitOfWork.OrderHeader.Get(u => u.Id == orderId, includeProperties: "ApplicationUser"),
+                OrderDetail = _unitOfWork.OrderDetail.GetAll(u => u.OrderHeaderId == orderId, includeProperties: "Product")
+            };
+
+            return View(orderVM);
+        }
 
         #region API CALLS
 
