@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WalkUniq.Models
+namespace WalkUniq.Models.ViewModels
 {
     public class OrderVM
     {
