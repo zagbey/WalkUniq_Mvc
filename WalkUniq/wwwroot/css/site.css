@@ -38,15 +38,7 @@ body {
 #text-slider.carousel {
     background-color: black;
     color: white;
-    height: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#text-slider.carousel {
-    background-color: black;
-    color: white;
-    height: 15px;
+    height: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -79,8 +71,44 @@ body {
     }
 
 #text-slider .carousel-control-prev,
-#text-slider .carousel-control-next {
+#text-slider .carousel-control-next{
     font-size: 15px; /* Ok icon size */
-    margin: 0; /* Butonlar arasındaki mesafeyi sıfırla */
+    margin-right: 0; /* Butonlar arasındaki mesafeyi sıfırla */
     padding: 0.5rem 1rem; /* Buton içeriği içerisindeki iç ve dış dolguları düzenle */
 }
+
+/*color-lib partners start*/
+
+.col {
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    max-width: 100%;
+}
+@media (max-width: 767.98px) {
+    .partner-col {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+.colorlib-partner,
+.colorlib-intro,
+.colorlib-product {
+    padding: 7em 0;
+    clear: both;
+}
+
+@media (max-width: 767.98px) {
+    .partner-col {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+/*color-lib partners end*/
