@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Security.Claims;
 using WalkUniq.DataAccess.Repository.IRepository;
 using WalkUniq.Models;
+using WalkUniq.Models.ViewModels;
 using WalkUniq.Utility;
 
 namespace WalkUniq.Areas.Customer.Controllers
@@ -35,6 +36,30 @@ namespace WalkUniq.Areas.Customer.Controllers
             };
             return View(cart);
         }
+        public IActionResult Men(int categoryId)
+        {
+            // Kategoriye ait ürünleri getir
+            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(
+                filter: p => p.CategoryId == categoryId,
+                includeProperties: "Category"
+            );
+
+            // Kategoriyi bul
+            Category category = _unitOfWork.Category.Get(c => c.Id == categoryId);
+
+            // Model oluştur
+            ProductsByCategoryVM model = new ProductsByCategoryVM
+            {
+                Category = category,
+                Products = productList,
+                CategoryId = categoryId // CategoryId'yi ayarla
+            };
+
+            return View(model);
+        }
+
+
+
         [HttpPost]
         [Authorize] // giriş yapan userID
         //new ıtems ford the card
