@@ -12,9 +12,32 @@
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="//cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
+    @* header slider *@
+    <div id="text-slider" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <p><i class="fa-solid fa-plane fa-rotate-270 fa-xs"></i> Fast Delivery</p>
+            </div>
+            <div class="carousel-item">
+                <p><i class="fa-solid fa-dollar-sign fa-xs"></i>  Lowest Price Guarantee </p>
+            </div>
+            <div class="carousel-item">
+                <p<i class="fa-solid fa-check fa-xs"></i>  Extra 5% OFF YOUR FIRST ORDER </p>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#text-slider" data-bs-slide="next">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#text-slider" data-bs-slide="prev">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">

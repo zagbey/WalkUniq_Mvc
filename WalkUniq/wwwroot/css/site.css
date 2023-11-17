@@ -31,3 +31,56 @@ body {
     margin: auto 0.25rem;
     box-shadow: 0 -2px;
 }
+
+
+
+/*slider header*/
+#text-slider.carousel {
+    background-color: black;
+    color: white;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#text-slider.carousel {
+    background-color: black;
+    color: white;
+    height: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#text-slider .carousel-inner {
+    height: 100%;
+}
+
+#text-slider .carousel-item {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+    #text-slider .carousel-item.active {
+        display: flex;
+    }
+
+    #text-slider .carousel-item p {
+        margin: 0;
+        text-align: left; /* Metinleri sola hizala */
+        display: flex;
+        align-items: center;
+    }
+
+    #text-slider .carousel-item i {
+        margin-right: 10px; /* İkon ile metin arasında boşluk bırak */
+    }
+
+#text-slider .carousel-control-prev,
+#text-slider .carousel-control-next {
+    font-size: 15px; /* Ok icon size */
+    margin: 0; /* Butonlar arasındaki mesafeyi sıfırla */
+    padding: 0.5rem 1rem; /* Buton içeriği içerisindeki iç ve dış dolguları düzenle */
+}
