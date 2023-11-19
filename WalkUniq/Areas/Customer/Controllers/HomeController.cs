@@ -20,12 +20,27 @@ namespace WalkUniq.Areas.Customer.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int? showAll)
         {
-           //shoppingcartviewcomponent e bak
-            IEnumerable<Product> productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            //shoppingcartviewcomponent e bak
+            int pageSize = 4; // Sayfa başına gösterilecek ürün sayısı
+            IEnumerable<Product> productList;
+            if (showAll.HasValue && showAll.Value == 1)
+            {
+                //tüm ürünleri göster 
+                productList = _unitOfWork.Product.GetAll(includeProperties: "Category");
+            }
+            else
+            {
+                // Belirli sayıda ürünü getir
+                productList = _unitOfWork.Product.GetAll(includeProperties: "Category")
+                    .Take(pageSize);
+            }
             return View(productList);
         }
+
+
+
         public IActionResult Details(int productId)
         {
             ShoppingCart cart = new()
@@ -57,8 +72,6 @@ namespace WalkUniq.Areas.Customer.Controllers
 
             return View(model);
         }
-
-
 
         [HttpPost]
         [Authorize] // giriş yapan userID
