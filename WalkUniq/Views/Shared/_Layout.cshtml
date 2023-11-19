@@ -37,7 +37,7 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-
+    
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
@@ -102,10 +102,13 @@
             </div>
         </nav>
     </header>
+    <button type="submit" onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
     <div class="container">
         <main role="main" class="pb-3">
-            <partial name="_Notification" />
+            <partial name="_Notification" />  
             @RenderBody()
+            
         </main>
     </div>
 
@@ -298,6 +301,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/backTop.js" asp-append-version="true"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="//cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js" asp-append-version="true"></script>
     <script src="https://cdn.tiny.cloud/1/g28lhnxtlihu4l4a381gw7tz47voznshwbi10lmsvlekrfme/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
