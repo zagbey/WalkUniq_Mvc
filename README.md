@@ -45,7 +45,8 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
  
  <summary>Ekran Görüntüleri</summary>
 
-    ![Home Page]("C:\Users\90535\OneDrive\Resimler\Ekran Görüntüleri\bitirme projesi\Home Page.png")
-  
+    
+  ![Home Page](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/78973bf6-fda3-49ee-912c-841e323d5460)
+
 
 </details>
