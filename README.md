@@ -48,6 +48,9 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
   - Ana Sayfa
 ![HomePage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/63f6ad09-4cd4-400b-a14a-6c6ffce81dbd)
 
+  - Register sayfası  
+![registerPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/2b70efb7-0192-4929-a6bd-969ec26ffc81)
+
   
   
 
