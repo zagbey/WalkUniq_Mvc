@@ -45,7 +45,7 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
  
  <summary>Ekran Görüntüleri</summary>
 
-    ![Home Page]("C:\Users\90535\OneDrive\Resimler\Ekran Görüntüleri\bitirme projesi\Home Page.png".png)
+    ![Home Page]("C:\Users\90535\OneDrive\Resimler\Ekran Görüntüleri\bitirme projesi\Home Page.png")
   
 
 </details>
