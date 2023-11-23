@@ -45,10 +45,8 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
  
  <summary>Ekran Görüntüleri</summary>
 
-   -Home page
-
    
-  [Home Page]("C:\github\wissenEF\Walk\WalkUniq\wwwroot\images\ScreenShots\registerPage.png")
+  [Home Page](wwwroot\images\ScreenShots\HomePage.png)
 
 
 </details>
