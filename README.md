@@ -45,8 +45,11 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
  
  <summary>Ekran Görüntüleri</summary>
 
-   
-  [Home Page](wwwroot\images\ScreenShots\HomePage.png)
+  - Ana Sayfa
+![HomePage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/63f6ad09-4cd4-400b-a14a-6c6ffce81dbd)
+
+  
+  
 
 
 </details>
