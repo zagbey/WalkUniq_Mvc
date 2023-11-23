@@ -45,14 +45,26 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
  
  <summary>Ekran Görüntüleri</summary>
 
-  - Ana Sayfa
+  - Home Page
 ![HomePage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/63f6ad09-4cd4-400b-a14a-6c6ffce81dbd)
 
-  - Register sayfası  
+  - Register Page  
 ![registerPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/2b70efb7-0192-4929-a6bd-969ec26ffc81)
 
+ - Login Page
+![LoginPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/8ffec7b3-008f-4109-ad5c-1d9dc54c1bce)
+ - Shopping Cart
+   ![ShoppingCart](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/4b2599ab-f8e7-4bdf-9fda-81c7543f518b)
+
+ - Admin Content Manager (CRUD)
+  ![AdminProductManagement](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/2bdd856c-a461-4311-8fd3-88360b0fab57)
+
+ - Product Update
+![ProductUpdate](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/c0366a57-e768-415d-b1b1-43cea9a3fc8f)
   
-  
+ - Product Create 
+![CreateProduct](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/3e215b48-45c4-4678-a791-ffed9b4e8c01)
+ - 
 
 
 </details>
