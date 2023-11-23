@@ -67,7 +67,7 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
   ![ProductUpdate](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/c0366a57-e768-415d-b1b1-43cea9a3fc8f)
   
  - Product Create 
-![CreateProduct](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/3e215b48-45c4-4678-a791-ffed9b4e8c01)
+   ![CreateProduct](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/3e215b48-45c4-4678-a791-ffed9b4e8c01)
 
  - Admin Users Create 
 ![AdminUsersCreatingPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/8cbe8230-a85d-46d3-86b6-e9a2ea22880a)
