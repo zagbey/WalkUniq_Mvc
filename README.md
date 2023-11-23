@@ -41,3 +41,11 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
     - jQuery
 
 </details>
+<details>
+ 
+ <summary>Ekran Görüntüleri</summary>
+
+    ![Home Page]("C:\Users\90535\OneDrive\Resimler\Ekran Görüntüleri\bitirme projesi\Home Page.png".png)
+  
+
+</details>
