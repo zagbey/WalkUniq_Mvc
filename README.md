@@ -48,7 +48,7 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
    -Home page
 
    
-  [Home Page](C:\github\wissenEF\Walk\WalkUniq\wwwroot\images\ScreenShots\registerPage.png)
+  [Home Page]("C:\github\wissenEF\Walk\WalkUniq\wwwroot\images\ScreenShots\registerPage.png")
 
 
 </details>
