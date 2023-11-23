@@ -55,6 +55,10 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
 ![LoginPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/8ffec7b3-008f-4109-ad5c-1d9dc54c1bce)
  - Shopping Cart
    ![ShoppingCart](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/4b2599ab-f8e7-4bdf-9fda-81c7543f518b)
+ - Stripe Payment
+   ![StripeOdeme](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/aa0bec66-7b16-42fd-b325-7669e48b891a)
+ - Order Confirm Page
+   ![OrderConfirmedPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/3ccedff0-3bad-4b24-a70a-61f678da4f98)
 
  - Admin Content Manager (CRUD)
   ![AdminProductManagement](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/2bdd856c-a461-4311-8fd3-88360b0fab57)
@@ -64,7 +68,8 @@ Regıster olurken rol seçmeyen kullanıcıya default olarak **Customer** olarak
   
  - Product Create 
 ![CreateProduct](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/3e215b48-45c4-4678-a791-ffed9b4e8c01)
- - 
 
+ - Admin Users Create 
+![AdminUsersCreatingPage](https://github.com/zagbey/WalkUniq_Mvc/assets/49595767/8cbe8230-a85d-46d3-86b6-e9a2ea22880a)
 
 </details>
